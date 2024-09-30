@@ -25,6 +25,10 @@
             background-color: #007BFF;
             padding: 20px;
             text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
         header img {
             max-width: 150px;
@@ -33,7 +37,7 @@
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 100px auto 20px auto; /* Adjust for sticky header */
             overflow: hidden;
         }
         .hero {
@@ -71,9 +75,10 @@
             color: white;
             text-align: center;
             padding: 15px 0;
-            position: relative;
+            position: fixed;
             bottom: 0;
             width: 100%;
+            z-index: 1000;
         }
         footer p {
             margin: 0;
