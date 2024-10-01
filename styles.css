@@ -66,17 +66,17 @@ footer p {
 }
 
 /* Form styles */
-#land-calculator form {
+form {
     margin: 10px 0;
 }
-#land-calculator input {
+input, select {
     padding: 8px;
     margin: 5px 0;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#land-calculator button {
+button {
     background-color: #ff4c6a;
     color: white;
     border: none;
@@ -84,7 +84,7 @@ footer p {
     cursor: pointer;
     border-radius: 4px;
 }
-#land-calculator button:hover {
+button:hover {
     background-color: #ff6d8a;
 }
 
