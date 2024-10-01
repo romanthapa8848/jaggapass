@@ -41,7 +41,10 @@ function convertLandUnits() {
     // Convert from square feet to the target unit
     const convertedValue = valueInSquareFeet / conversionFactors[toUnit];
 
-    // Display the result
+    // Display the result in the 'converted-value' input box
+    document.getElementById('converted-value').value = convertedValue.toFixed(2);
+
+    // Optional: Display the result in text format below
     document.getElementById('conversion-result').innerText = 
         `${unitValue} ${fromUnit} is equivalent to ${convertedValue.toFixed(2)} ${toUnit}.`;
 }
