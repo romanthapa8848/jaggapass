@@ -11,29 +11,37 @@ function calculateLandValue() {
     }
 }
 
-// Land Unit Converter
+// Land Unit Converter with From and To unit selection
 function convertLandUnits() {
+    // Conversion factors based on 1 unit to square feet
     const conversionFactors = {
-        bigha: { sq_ft: 72900, m2: 6772.63, ropani: 13.31 },
-        kattha: { sq_ft: 3645, m2: 338.63 },
-        dhur: { sq_ft: 182.25, m2: 16.93 },
-        ropani: { sq_ft: 5476, m2: 508.72, aana: 16 },
-        aana: { sq_ft: 342.25, m2: 31.8, paisa: 4 },
-        paisa: { sq_ft: 85.56, m2: 7.95, daam: 4 },
-        daam: { sq_ft: 21.39, m2: 1.99 }
+        bigha: 72900,
+        kattha: 3645,
+        dhur: 182.25,
+        ropani: 5476,
+        aana: 342.25,
+        paisa: 85.56,
+        daam: 21.39
     };
 
-    const unitType = document.getElementById('unit-type').value;
+    // Get the from and to units
+    const fromUnit = document.getElementById('from-unit').value;
+    const toUnit = document.getElementById('to-unit').value;
     const unitValue = parseFloat(document.getElementById('unit-value').value);
 
+    // Validate the input value
     if (!unitValue || unitValue <= 0) {
         document.getElementById('conversion-result').innerText = 'Please enter a valid value.';
         return;
     }
 
-    const selectedUnit = conversionFactors[unitType];
+    // Convert the input value to square feet
+    const valueInSquareFeet = unitValue * conversionFactors[fromUnit];
 
-    const sqFeet = selectedUnit.sq_ft * unitValue;
-    const mSquare = selectedUnit.m2 * unitValue;
+    // Convert from square feet to the target unit
+    const convertedValue = valueInSquareFeet / conversionFactors[toUnit];
 
-    let result = `The equivalent land
+    // Display the result
+    document.getElementById('conversion-result').innerText = 
+        `${unitValue} ${fromUnit} is equivalent to ${convertedValue.toFixed(2)} ${toUnit}.`;
+}
