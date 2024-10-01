@@ -1,16 +1,29 @@
 // Land Value Calculator
 function calculateLandValue() {
-    const landArea = document.getElementById('land-area').value;
-    const pricePerUnit = document.getElementById('price-per-unit').value;
+    // Get the selected unit, total volume, and rate per unit from the form
+    const landUnit = document.getElementById('land-unit').value;
+    const totalVolume = parseFloat(document.getElementById('total-volume').value);
+    const ratePerUnit = parseFloat(document.getElementById('rate-per-unit').value);
 
-    if (landArea && pricePerUnit) {
-        const totalValue = landArea * pricePerUnit;
-        document.getElementById('calculation-result').innerText = `The total value of the land is: ${totalValue}`;
-    } else {
-        document.getElementById('calculation-result').innerText = 'Please fill in both fields.';
+    // Check if totalVolume and ratePerUnit are valid numbers
+    if (isNaN(totalVolume) || totalVolume <= 0) {
+        alert('Please enter a valid number for total volume.');
+        return;
     }
-}
+    if (isNaN(ratePerUnit) || ratePerUnit <= 0) {
+        alert('Please enter a valid rate per unit.');
+        return;
+    }
 
+    // Calculate the total land value
+    const totalLandValue = totalVolume * ratePerUnit;
+
+    // Display the calculated land value in the result input field
+    document.getElementById('calculated-land-value').value = totalLandValue.toFixed(2);
+
+    // Debugging step to check values
+    console.log(`Unit: ${landUnit}, Volume: ${totalVolume}, Rate: ${ratePerUnit}, Total Value: ${totalLandValue}`);
+}
 // Land Unit Converter with From and To unit selection
 function convertLandUnits() {
     // Conversion factors based on 1 unit to square feet
