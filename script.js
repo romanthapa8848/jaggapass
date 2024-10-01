@@ -1,5 +1,5 @@
 // Land Value Calculator
-function calculateLandValue() {
+
     // Get the selected unit, total volume, and rate per unit from the form
     const landUnit = document.getElementById('land-unit').value;
     const totalVolume = parseFloat(document.getElementById('total-volume').value);
@@ -14,6 +14,9 @@ function calculateLandValue() {
         alert('Please enter a valid rate per unit.');
         return;
     }
+
+
+
 
     // Calculate the total land value
     const totalLandValue = totalVolume * ratePerUnit;
