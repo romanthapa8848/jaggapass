@@ -50,23 +50,45 @@
     </article>
 
     <!-- Land Value Calculator -->
-    <article id="land-calculator">
-        <section>
-            <h3>Land Value Calculator</h3>
-            <p>Calculate the estimated value of your land by entering the area and price per unit.</p>
-            <form id="calculator-form">
-                <label for="land-area">Land Area (in sq. units):</label>
-                <input type="number" id="land-area" required><br><br>
-                
-                <label for="price-per-unit">Price per Unit (in your currency):</label>
-                <input type="number" id="price-per-unit" required><br><br>
-                
-                <button type="button" onclick="calculateLandValue()">Calculate</button>
-            </form>
-            <p id="calculation-result"></p>
-        </section>
-    </article>
 
+<!-- Land Value Calculator Section -->
+<article id="land-value-calculator">
+    <section>
+        <h3>Land Value Calculator</h3>
+        <p>Calculate the total value of your land based on its area and rate per unit.</p>
+
+        <form id="land-value-form">
+            <!-- Select Land Unit -->
+            <label for="land-unit">Select Land Unit:</label>
+            <select id="land-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option>
+            </select><br><br>
+
+            <!-- Input Total Volume -->
+            <label for="total-volume">Total Volume (Area in selected unit):</label>
+            <input type="number" id="total-volume" required><br><br>
+
+            <!-- Input Rate per Unit -->
+            <label for="rate-per-unit">Rate per Unit (in your selected unit):</label>
+            <input type="number" id="rate-per-unit" required><br><br>
+
+            <!-- Display Calculated Land Value -->
+            <label for="calculated-land-value">Calculated Land Value (Total Price):</label>
+            <input type="number" id="calculated-land-value" readonly><br><br>
+
+            <button type="button" onclick="calculateLandValue()">Calculate</button>
+        </form>
+    </section>
+</article>
+
+
+    <!-- Land Unit Converter -->
 <article id="land-unit-converter">
     <section>
         <h3>Land Unit Converter</h3>
