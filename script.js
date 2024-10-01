@@ -24,6 +24,7 @@ function calculateLandValue() {
     // Debugging step to check values
     console.log(`Unit: ${landUnit}, Volume: ${totalVolume}, Rate: ${ratePerUnit}, Total Value: ${totalLandValue}`);
 }
+
 // Land Unit Converter with From and To unit selection
 function convertLandUnits() {
     // Conversion factors based on 1 unit to square feet
