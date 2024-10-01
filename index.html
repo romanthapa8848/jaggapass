@@ -67,32 +67,41 @@
         </section>
     </article>
 
-    <!-- Land Unit Converter -->
-    <article id="land-unit-converter">
-        <section>
-            <h3>Land Unit Converter</h3>
-            <p>Convert between popular land units (Bigha, Kattha, Ropani, etc.).</p>
-            <form id="unit-converter-form">
-                <label for="unit-type">Select Unit:</label>
-                <select id="unit-type" required>
-                    <option value="bigha">Bigha</option>
-                    <option value="kattha">Kattha</option>
-                    <option value="dhur">Dhur</option>
-                    <option value="ropani">Ropani</option>
-                    <option value="aana">Aana</option>
-                    <option value="paisa">Paisa</option>
-                    <option value="daam">Daam</option>
-                </select><br><br>
+<article id="land-unit-converter">
+    <section>
+        <h3>Land Unit Converter</h3>
+        <p>Convert between popular land units (Bigha, Kattha, Ropani, etc.).</p>
+        <form id="unit-converter-form">
+            <label for="from-unit">Convert From:</label>
+            <select id="from-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option>
+            </select><br><br>
 
-                <label for="unit-value">Enter Value:</label>
-                <input type="number" id="unit-value" required><br><br>
+            <label for="unit-value">Enter Value:</label>
+            <input type="number" id="unit-value" required><br><br>
 
-                <button type="button" onclick="convertLandUnits()">Convert</button>
-            </form>
-            <p id="conversion-result"></p>
-        </section>
-    </article>
+            <label for="to-unit">Convert To:</label>
+            <select id="to-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option>
+            </select><br><br>
 
+            <button type="button" onclick="convertLandUnits()">Convert</button>
+        </form>
+        <p id="conversion-result"></p>
+    </section>
+</article>
     <!-- Land Valuation Service -->
     <article id="land-valuation">
         <section>
