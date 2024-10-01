@@ -65,6 +65,29 @@ footer p {
     margin: 0;
 }
 
+/* Form styles */
+#land-calculator form {
+    margin: 10px 0;
+}
+#land-calculator input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#land-calculator button {
+    background-color: #ff4c6a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#land-calculator button:hover {
+    background-color: #ff6d8a;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
