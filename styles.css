@@ -12,13 +12,13 @@ body {
 }
 
 header {
-  background-color: #ff4c6a; /* Pink color */
+  background-color: white; /* Pink color */
   padding: 20px;
   text-align: center;
 }
 
 header img {
-  max-width: 150px;
+  max-width: 300px;
   height: auto;
 }
 
