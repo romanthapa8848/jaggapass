@@ -15,175 +15,184 @@
     <title>Jaggapass.com - Buy, sell, rent and register land with ease.</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Favicon Link -->
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1728488366569054"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1728488366569054"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <img src="logo.png" alt="Jaggapass Logo" />
-      <!-- Add your logo path here -->
-    </header>
+    <div class="wrapper">
+      <header>
+        <img src="logo.png" alt="Jaggapass Logo" />
+        <!-- Add your logo path here -->
+      </header>
 
-    <main class="container">
-      <section class="hero">
-        <h2>Your Trusted Platform for Land Transactions</h2>
-        <p>Buy, sell, rent, and register land with ease.</p>
-      </section>
-
-      <article id="buy">
-        <section>
-          <h3>Buy Land</h3>
-          <p>Browse our extensive listings of available land for purchase.</p>
+      <main class="container">
+        <section class="hero">
+          <h2>Your Trusted Platform for Land Transactions</h2>
+          <p>Buy, sell, rent, and register land with ease.</p>
         </section>
-      </article>
 
-      <article id="sell">
-        <section>
-          <h3>Sell Land</h3>
-          <p>
-            Easily list your land for sale and connect with interested buyers.
-          </p>
-        </section>
-      </article>
+        <article id="buy">
+          <section>
+            <h3>Buy Land</h3>
+            <p>Browse our extensive listings of available land for purchase.</p>
+          </section>
+        </article>
 
-      <article id="rent">
-        <section>
-          <h3>Rent Land</h3>
-          <p>Find available land for rent that suits your needs.</p>
-        </section>
-      </article>
+        <article id="sell">
+          <section>
+            <h3>Sell Land</h3>
+            <p>
+              Easily list your land for sale and connect with interested buyers.
+            </p>
+          </section>
+        </article>
 
-      <article id="register"> 
-        <section>
-          <h3>Register Land</h3>
-          <p>
-            Get assistance with the land registration process to ensure legal
-            compliance.
-          </p>
-        </section>
-      </article>
+        <article id="rent">
+          <section>
+            <h3>Rent Land</h3>
+            <p>Find available land for rent that suits your needs.</p>
+          </section>
+        </article>
 
-      <!-- Land Value Calculator Section -->
-      <article id="land-value-calculator">
-        <section>
-          <h3>Land Value Calculator</h3>
-          <p>
-            Calculate the total value of your land based on its area and rate
-            per unit.
-          </p>
+        <article id="register">
+          <section>
+            <h3>Register Land</h3>
+            <p>
+              Get assistance with the land registration process to ensure legal
+              compliance.
+            </p>
+          </section>
+        </article>
 
-          <form id="land-value-form">
-            <!-- Select Land Unit -->
-            <label for="land-unit">Select Land Unit:</label>
-            <select id="land-unit" required>
-              <option value="bigha">Bigha</option>
-              <option value="kattha">Kattha</option>
-              <option value="dhur">Dhur</option>
-              <option value="ropani">Ropani</option>
-              <option value="aana">Aana</option>
-              <option value="paisa">Paisa</option>
-              <option value="daam">Daam</option></select
-            ><br /><br />
+        <!-- Land Value Calculator Section -->
+        <article id="land-value-calculator">
+          <section>
+            <h3>Land Value Calculator</h3>
+            <p>
+              Calculate the total value of your land based on its area and rate
+              per unit.
+            </p>
 
-            <!-- Input Total Land Area -->
-            <label for="total-land-area"
-              >Total Land Area (in selected unit):</label
+            <form id="land-value-form">
+              <!-- Select Land Unit -->
+              <label for="land-unit">Select Land Unit:</label>
+              <select id="land-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option></select
+              ><br /><br />
+
+              <!-- Input Total Land Area -->
+              <label for="total-land-area"
+                >Total Land Area (in selected unit):</label
+              >
+              <input type="number" id="total-land-area" required /><br /><br />
+
+              <!-- Input Rate per Unit -->
+              <label for="rate-per-unit"
+                >Rate per Unit (in your selected unit):</label
+              >
+              <input type="number" id="rate-per-unit" required /><br /><br />
+
+              <!-- Display Calculated Land Value -->
+              <label for="calculated-land-value"
+                >Calculated Land Value (Total Price):</label
+              >
+              <input
+                type="number"
+                id="calculated-land-value"
+                readonly
+              /><br /><br />
+
+              <!-- Error Message for Land Value Calculator -->
+              <p id="land-value-error" class="error-message"></p>
+
+              <button type="button" onclick="calculateLandValue()">
+                Calculate
+              </button>
+            </form>
+          </section>
+        </article>
+
+        <!-- Land Unit Converter -->
+        <article id="land-unit-converter">
+          <section>
+            <h3>Land Unit Converter</h3>
+            <p>
+              Convert between popular land units (Bigha, Kattha, Ropani, etc.).
+            </p>
+            <form id="unit-converter-form">
+              <label for="from-unit">Convert From:</label>
+              <select id="from-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option></select
+              ><br /><br />
+
+              <label for="unit-value">Enter Value (From):</label>
+              <input type="number" id="unit-value" required /><br /><br />
+
+              <label for="to-unit">Convert To:</label>
+              <select id="to-unit" required>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="daam">Daam</option></select
+              ><br /><br />
+
+              <label for="converted-value">Converted Value (To):</label>
+              <input type="number" id="converted-value" readonly /><br /><br />
+
+              <!-- Error Message for Land Unit Converter -->
+              <p id="conversion-error" class="error-message"></p>
+
+              <button type="button" onclick="convertLandUnits()">
+                Convert
+              </button>
+            </form>
+            <p id="conversion-result"></p>
+          </section>
+        </article>
+
+        <!-- Land Valuation Service -->
+        <article id="land-valuation">
+          <section>
+            <h3>Land Valuation Service</h3>
+            <p>
+              We offer professional land valuation services to help you
+              understand the market value of your property. Contact us for more
+              information.
+            </p>
+            <button
+              onclick="alert('Contact us at 123-456-789 or email info@jaggapass.com')"
             >
-            <input type="number" id="total-land-area" required /><br /><br />
-
-            <!-- Input Rate per Unit -->
-            <label for="rate-per-unit"
-              >Rate per Unit (in your selected unit):</label
-            >
-            <input type="number" id="rate-per-unit" required /><br /><br />
-
-            <!-- Display Calculated Land Value -->
-            <label for="calculated-land-value"
-              >Calculated Land Value (Total Price):</label
-            >
-            <input
-              type="number"
-              id="calculated-land-value"
-              readonly
-            /><br /><br />
-
-            <!-- Error Message for Land Value Calculator -->
-            <p id="land-value-error" class="error-message"></p>
-
-            <button type="button" onclick="calculateLandValue()">
-              Calculate
+              Get in Touch
             </button>
-          </form>
-        </section>
-      </article>
+          </section>
+        </article>
+      </main>
 
-      <!-- Land Unit Converter -->
-      <article id="land-unit-converter">
-        <section>
-          <h3>Land Unit Converter</h3>
-          <p>
-            Convert between popular land units (Bigha, Kattha, Ropani, etc.).
-          </p>
-          <form id="unit-converter-form">
-            <label for="from-unit">Convert From:</label>
-            <select id="from-unit" required>
-              <option value="bigha">Bigha</option>
-              <option value="kattha">Kattha</option>
-              <option value="dhur">Dhur</option>
-              <option value="ropani">Ropani</option>
-              <option value="aana">Aana</option>
-              <option value="paisa">Paisa</option>
-              <option value="daam">Daam</option></select
-            ><br /><br />
-
-            <label for="unit-value">Enter Value (From):</label>
-            <input type="number" id="unit-value" required /><br /><br />
-
-            <label for="to-unit">Convert To:</label>
-            <select id="to-unit" required>
-              <option value="bigha">Bigha</option>
-              <option value="kattha">Kattha</option>
-              <option value="dhur">Dhur</option>
-              <option value="ropani">Ropani</option>
-              <option value="aana">Aana</option>
-              <option value="paisa">Paisa</option>
-              <option value="daam">Daam</option></select
-            ><br /><br />
-
-            <label for="converted-value">Converted Value (To):</label>
-            <input type="number" id="converted-value" readonly /><br /><br />
-
-            <!-- Error Message for Land Unit Converter -->
-            <p id="conversion-error" class="error-message"></p>
-
-            <button type="button" onclick="convertLandUnits()">Convert</button>
-          </form>
-          <p id="conversion-result"></p>
-        </section>
-      </article>
-
-      <!-- Land Valuation Service -->
-      <article id="land-valuation">
-        <section>
-          <h3>Land Valuation Service</h3>
-          <p>
-            We offer professional land valuation services to help you understand
-            the market value of your property. Contact us for more information.
-          </p>
-          <button
-            onclick="alert('Contact us at 123-456-789 or email info@jaggapass.com')"
-          >
-            Get in Touch
-          </button>
-        </section>
-      </article>
-    </main>
-
-    <footer>
-      <p>&copy; Jaggapass.com</p> 
-    </footer>
-
+      <footer>
+        <p>&copy; Jaggapass.com</p>
+      </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

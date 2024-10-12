@@ -5,14 +5,27 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%; /* Ensure full height for body */
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Stack header, main, and footer vertically */
+}
+
+.wrapper {
+  flex: 1; /* Allow the wrapper to take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
 }
 
 header {
-  background-color: white; /* Pink color */
+  background-color: white; /* Header color */
   padding: 20px;
   text-align: center;
 }
@@ -27,10 +40,11 @@ header img {
   max-width: 1200px;
   margin: 20px auto;
   overflow: hidden;
+  flex: 1; /* Allow the container to grow and fill available space */
 }
 
 .hero {
-  background-color: #ffe1e5; /* Light pink background */
+  background-color: white; /* Light background for hero section */
   padding: 60px 30px;
   text-align: center;
   border-radius: 8px;
@@ -39,12 +53,12 @@ header img {
 .hero h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #ff4c6a; /* Pink color for headings */
+  color: #70543e; /* Color for headings */
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #333;
+  color: #70543e;
 }
 
 section {
@@ -57,20 +71,21 @@ section {
 
 section h3 {
   font-size: 1.5rem;
-  color: #ff4c6a; /* Pink color for section headings */
+  color: #70543e; /* Color for section headings */
   margin-bottom: 10px;
 }
 
 section p {
   font-size: 1rem;
-  color: #555;
+  color: #70543e;
 }
 
 footer {
-  background-color: #ff4c6a; /* Pink color */
+  background-color: #70543e; /* Footer color */
   color: white;
   text-align: center;
   padding: 15px 0;
+  margin-top: auto; /* Ensure the footer stays at the bottom */
 }
 
 footer p {
@@ -87,12 +102,12 @@ select {
   padding: 8px;
   margin: 5px 0;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #70543e;
   border-radius: 4px;
 }
 
 button {
-  background-color: #ff4c6a;
+  background-color: #70543e;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -101,7 +116,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff3360;
+  background-color: #59412e; /* Darken on hover for button */
 }
 
 .error-message {
