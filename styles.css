@@ -33,8 +33,27 @@ body {
   border-radius: 10px;
   background: #ffffff; /* Clean white */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking */
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
 }
 
+/* Prevent form expansion and ensure message doesn’t overlap */
+.form-section #status-message {
+  position: relative;
+  margin-top: 20px; /* Ensure there is space above */
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8); /* Slight background for clarity */
+  color: #666666;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form Section heading and paragraph styles */
 .form-section h2 {
   text-align: center;
   color: #e74c3c; /* Red color for headlines */
