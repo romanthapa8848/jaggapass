@@ -1,126 +1,145 @@
-/* Basic Reset */
-* {
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc; /* Light neutral background */
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%; /* Ensure full height for body */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column; /* Stack header, main, and footer vertically */
+  color: #333333;
 }
 
 .wrapper {
-  flex: 1; /* Allow the wrapper to take up remaining space */
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-header {
-  background-color: white; /* Header color */
-  padding: 20px;
+/* Header */
+.header {
+  background-color: #ffffff; /* White header */
+  padding: 10px 20px; /* Reduced padding for a thinner header */
   text-align: center;
 }
 
-header img {
-  max-width: 300px;
+.logo {
+  max-width: 150px;
   height: auto;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
+/* Form Section */
+.form-section {
+  padding: 40px 20px;
+  max-width: 800px;
   margin: 20px auto;
-  overflow: hidden;
-  flex: 1; /* Allow the container to grow and fill available space */
+  border-radius: 10px;
+  background: #ffffff; /* Clean white */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.hero {
-  background-color: white; /* Light background for hero section */
-  padding: 60px 30px;
+.form-section h2 {
   text-align: center;
-  border-radius: 8px;
+  color: #e74c3c; /* Red color for headlines */
+  margin-bottom: 20px;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #70543e; /* Color for headings */
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #70543e;
-}
-
-section {
-  background-color: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-section h3 {
-  font-size: 1.5rem;
-  color: #70543e; /* Color for section headings */
-  margin-bottom: 10px;
-}
-
-section p {
+.form-section p {
+  text-align: center;
   font-size: 1rem;
-  color: #70543e;
+  color: #666666;
+  margin-bottom: 30px;
 }
 
-footer {
-  background-color: #70543e; /* Footer color */
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: auto; /* Ensure the footer stays at the bottom */
+.form-group {
+  margin-bottom: 20px;
 }
 
-footer p {
-  margin: 0;
+label {
+  display: block;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 5px;
 }
 
-/* Form styles */
-form {
-  margin: 10px 0;
-}
-
+/* Consistent Input and Select Styling */
 input,
 select {
-  padding: 8px;
-  margin: 5px 0;
   width: 100%;
-  border: 1px solid #70543e;
-  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #e74c3c; /* Red border */
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #333333;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding does not affect width */
 }
 
+/* Placeholder Styling */
+input::placeholder,
+select::placeholder {
+  color: #b0bec5; /* Light gray for placeholders */
+  font-style: italic;
+}
+
+/* Focus Styles */
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.6); /* Red glow */
+  border-color: #e74c3c; /* Red on focus */
+}
+
+/* Button Styling */
 button {
-  background-color: #70543e;
-  color: white;
-  padding: 10px 15px;
+  background-color: #e74c3c; /* Red for buttons */
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%; /* Makes the button span the entire form width */
 }
 
 button:hover {
-  background-color: #59412e; /* Darken on hover for button */
+  background-color: #c0392b; /* Darker red on hover */
 }
 
-.error-message {
-  color: red;
-  font-size: 0.9rem;
+/* Footer Styling */
+.footer {
+  text-align: center;
+  background-color: #e74c3c; /* Red footer */
+  color: #ffffff; /* White text */
   padding: 5px 0;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* For mobile screens */
+  body {
+    font-size: 14px; /* Adjust base font size for better readability on smaller screens */
+  }
+
+  .header {
+    padding: 10px 15px; /* Slightly smaller padding for compact header */
+  }
+
+  .form-section {
+    padding: 20px; /* Reduce padding for smaller screens */
+    margin: 10px;
+  }
+
+  input,
+  select {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }
